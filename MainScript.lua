@@ -117,7 +117,9 @@ textbox.Parent = LoginPage
 textbox.BackgroundTransparency = 0.5
 textbox.BackgroundColor3 = Color3.new(0.17,.17,.17)
 textbox.Visible = true
-textbox.Size = UDim2.new(0, 200, 0, 200)
+textbox.Size = UDim2.new(0, 200, 0, 50)
+textbox.TextScaled = true
+textbox.TextColor3 = Color3.new(255,255,255)
 textbox.Position = UDim2.new(0.5,0,0.5,0)
 textbox.Text = "Write password"
 
@@ -125,6 +127,7 @@ textbox.FocusLost:Connect(function(enterpressed)
 	if enterpressed then
 		local response = LoginService.login(textbox.Text)
 		if response["code"] then
+			LoginPage:Destroy()
 			task.spawn(function()	
 				local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/lua/main/discord.lua"))()
 				local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
@@ -266,7 +269,7 @@ textbox.FocusLost:Connect(function(enterpressed)
 				players:Seperator()
 			end)
 		else
-			textbox.Text = "Wron password"
+			textbox.Text = "Wrong password"
 		end
 	end
 end)
