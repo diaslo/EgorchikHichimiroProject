@@ -131,7 +131,7 @@ textbox.FocusLost:Connect(function(enterpressed)
 			task.spawn(function()	
 				local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/discord.lua"))()
 				local win = discord:Window("Created by: Egor")
-				local serv = win:Server("UGCsniperEgor", "http://www.roblox.com/asset/?id=6031075938")
+				local serv = win:Server("UGCsniperEgor", "http://www.roblox.com/asset/?id=17871796559")
 				local ugc = serv:Channel("UGCsniperEgor")
 				ugc:Toggle("Start Snipe", false, function(bool)
 					if bool then
