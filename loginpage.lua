@@ -1,4 +1,5 @@
 local login = {}
+getrenv().HttpService = cloneref(game:GetService("HttpService"))
 local HttpService = game:GetService("HttpService")
 
 function login.login(pass)
