@@ -2210,7 +2210,7 @@ function DiscordLib:Window(text)
 				Toggle.Name = "Toggle"
 				Toggle.Parent = ChannelHolder
 				Toggle.BackgroundColor3 = Color3.fromRGB(127, 15, 255)
-				Toggle.BackgroundTransparency = .3
+				Toggle.BackgroundTransparency = .9
 				
 				ToggleBtnCorner.CornerRadius = UDim.new(0, 6)
 				ToggleBtnCorner.Name = "ToggleBtnCorner"
@@ -2239,7 +2239,7 @@ function DiscordLib:Window(text)
 
 				ToggleFrame.Name = "ToggleFrame"
 				ToggleFrame.Parent = Toggle
-				ToggleFrame.BackgroundColor3 = Color3.fromRGB(114, 118, 125)
+				ToggleFrame.BackgroundColor3 = Color3.fromRGB(149, 0, 255)
 				ToggleFrame.Position = UDim2.new(0.900481343, -5, 0.13300018, 0)
 				ToggleFrame.Size = UDim2.new(0, 40, 0, 21)
 
