@@ -2233,7 +2233,7 @@ function DiscordLib:Window(text)
 				ToggleTitle.Size = UDim2.new(0, 200, 0, 30)
 				ToggleTitle.Font = Enum.Font.Gotham
 				ToggleTitle.Text = text
-				ToggleTitle.TextColor3 = Color3.fromRGB(127, 131, 137)
+				ToggleTitle.TextColor3 = Color3.fromRGB(255,255,255)
 				ToggleTitle.TextSize = 14
 				ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
 
