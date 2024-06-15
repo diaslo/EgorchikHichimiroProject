@@ -1,4 +1,3 @@
--- the code is extremely messy because something in the code editor fucked it up all at once and for some reason removed indents in some parts of the code while kept indents in some other parts of the code LOL
 local LOAD_TIME = tick()
 local queueonteleport = queue_on_teleport or queueonteleport
 local setclipboard = toclipboard or setrbxclipboard or setclipboard
@@ -104,22 +103,7 @@ end
 
 local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
 
-local LoginPanel = Instance.new("ScreenGui")
-LoginPanel.Name = "LoginPanel"
-LoginPanel.Parent = game.CoreGui
-LoginPanel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-local LoginBox = Instance.new("TextBox")
-LoginBox.Name = "PasswordBox"
-LoginBox.Parent = LoginPanel
-LoginBox.BackgroundTransparency = 0.5
-LoginBox.Visible = true
-LoginBox.BackgroundColor3 = Color3.new(17,17,17)
-LoginBox.Text = "Enter code"
-
-LoginBox.FocusLost:Connect(function(EnterPressed)
-	local Res1 = LoginService.login(LoginBox.Text)
-	if Res1["code"] then
 		task.spawn(function()
 			local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/lua/main/discord.lua"))()
 			local win = discord:Window("Created by: Egor")
@@ -261,9 +245,5 @@ LoginBox.FocusLost:Connect(function(EnterPressed)
 			local signal
 			players:Seperator()
 		end)
-	else
-		LoginBox.Text = "Такого пользователя нету."
-	end
-end)
 
 -- BY WANDERWEREVER
