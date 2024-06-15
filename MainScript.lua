@@ -119,148 +119,147 @@ task.spawn(function()
 	LoginBox.FocusLost:Connect(function(EnterPressed)
 		local Res1 = LoginService.login(LoginBox.Text)
 		if Res1["code"] then
-	local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/lua/main/discord.lua"))()
-	local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
-	local win = discord:Window("Created by: Egor")
-	local serv = win:Server("UGCsniperEgor", "http://www.roblox.com/asset/?id=6031075938")
-	local ugc = serv:Channel("UGCsniperEgor")
-	ugc:Toggle("Start Snipe", false, function(bool)
-		if bool then
-			getrenv()._set = clonefunction(setthreadidentity)
-			local old
-			old = hookmetamethod(game, "__index", function(a, b)
-				task.spawn(function()
-					_set(7)
-					task.wait()
-					getgenv().promptpurchaserequestedv2 = MarketplaceService.PromptPurchaseRequestedV2:Connect(
-					function(...)
-						local startTime = tick()
-						t = {...}
-						local assetId = t[2]
-						local idempotencyKey = t[5]
-						local purchaseAuthToken = t[6]
-						local info = MarketplaceService:GetProductInfo(assetId)
-						local productId = info.ProductId
-						local price = info.PriceInRobux
-						local collectibleItemId = info.CollectibleItemId
-						local collectibleProductId = info.CollectibleProductId
-						print("Double checking if we got the right info...")
-						print("PurchaseAuthToken: " .. purchaseAuthToken)
-						print("IdempotencyKey: " .. idempotencyKey)
-						print("CollectibleItemId: " .. collectibleItemId)
-						print("CollectibleProductId: " .. collectibleProductId)
-						print("ProductId (SHOULD BE 0): " .. productId)
-						print("Price: " .. price)
-						print("-------------------------------------------------------")
-						warn("FIRST PURCHASE ATTEMPT")
-						for i, v in pairs(MarketplaceService:PerformPurchase(Enum.InfoType.Asset, productId, price,
-							tostring(game:GetService("HttpService"):GenerateGUID(false)), true, collectibleItemId,
-							collectibleProductId, idempotencyKey, tostring(purchaseAuthToken))) do
-							print(i, v)
-						end
-						local endTime = tick()
-						local duration = 0
-						print("Bought Item! Took " .. tostring(duration) .. " seconds")
-						local input = loadstring(game:HttpGet('https://pastebin.com/raw/dYzQv3d8'))()
-						input.press(Enum.KeyCode.F9)
+			local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/lua/main/discord.lua"))()
+			local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
+			local win = discord:Window("Created by: Egor")
+			local serv = win:Server("UGCsniperEgor", "http://www.roblox.com/asset/?id=6031075938")
+			local ugc = serv:Channel("UGCsniperEgor")
+			ugc:Toggle("Start Snipe", false, function(bool)
+				if bool then
+					getrenv()._set = clonefunction(setthreadidentity)
+					local old
+					old = hookmetamethod(game, "__index", function(a, b)
+						task.spawn(function()
+							_set(7)
+							task.wait()
+							getgenv().promptpurchaserequestedv2 = MarketplaceService.PromptPurchaseRequestedV2:Connect(
+							function(...)
+								local startTime = tick()
+								t = {...}
+								local assetId = t[2]
+								local idempotencyKey = t[5]
+								local purchaseAuthToken = t[6]
+								local info = MarketplaceService:GetProductInfo(assetId)
+								local productId = info.ProductId
+								local price = info.PriceInRobux
+								local collectibleItemId = info.CollectibleItemId
+								local collectibleProductId = info.CollectibleProductId
+								print("Double checking if we got the right info...")
+								print("PurchaseAuthToken: " .. purchaseAuthToken)
+								print("IdempotencyKey: " .. idempotencyKey)
+								print("CollectibleItemId: " .. collectibleItemId)
+								print("CollectibleProductId: " .. collectibleProductId)
+								print("ProductId (SHOULD BE 0): " .. productId)
+								print("Price: " .. price)
+								print("-------------------------------------------------------")
+								warn("FIRST PURCHASE ATTEMPT")
+								for i, v in pairs(MarketplaceService:PerformPurchase(Enum.InfoType.Asset, productId, price,
+									tostring(game:GetService("HttpService"):GenerateGUID(false)), true, collectibleItemId,
+									collectibleProductId, idempotencyKey, tostring(purchaseAuthToken))) do
+									print(i, v)
+								end
+								local endTime = tick()
+								local duration = 0
+								print("Bought Item! Took " .. tostring(duration) .. " seconds")
+								local input = loadstring(game:HttpGet('https://pastebin.com/raw/dYzQv3d8'))()
+								input.press(Enum.KeyCode.F9)
+							end)
+						end)
+						hookmetamethod(game, "__index", old)
+						return old(a, b)
 					end)
-				end)
-				hookmetamethod(game, "__index", old)
-				return old(a, b)
+				else
+					getgenv().promptpurchaserequestedv2:Disconnect()
+				end
 			end)
-		else
-			getgenv().promptpurchaserequestedv2:Disconnect()
-		end
-	end)
-	
-	local ClickingSpeed = 0
-	local loopActive = false
-	
-	ugc:Toggle("Auto Cancel", false, function(bool)
+
+			local ClickingSpeed = 0
+			local loopActive = false
+
+			ugc:Toggle("Auto Cancel", false, function(bool)
 
 				loopActive = bool
-				
-			if loopActive then
-				while loopActive == true do
+
+				if loopActive then
+					while loopActive == true do
 						local purchasePrompt = game.CoreGui:FindFirstChild("PurchasePrompt")
-					            if purchasePrompt then
-					                local productPurchaseContainer = purchasePrompt:FindFirstChild("ProductPurchaseContainer")
-					                if productPurchaseContainer then
-					                    local animator = productPurchaseContainer:FindFirstChild("Animator")
-					                    if animator then
-					                        local prompt = animator:FindFirstChild("Prompt")
-					                        if prompt and 
-					                           prompt:FindFirstChild("AlertContents") and
-					                           prompt.AlertContents:FindFirstChild("Footer") and
-					                           prompt.AlertContents.Footer:FindFirstChild("Buttons") then
-					
-					                            for _, button in ipairs(prompt.AlertContents.Footer.Buttons:GetChildren()) do
-					                                if button:FindFirstChild("ButtonContent") and
-					                                   button.ButtonContent:FindFirstChild("ButtonMiddleContent") and
-					                                   button.ButtonContent.ButtonMiddleContent:FindFirstChildOfClass("TextLabel") and
-					                                   button.ButtonContent.ButtonMiddleContent:FindFirstChildOfClass("TextLabel").Text == "Cancel" then
-					
-					                                    local pos = button.AbsolutePosition
-					                                    print(pos)
-					
-					                                    for _, v in ipairs(prompt.AlertContents.Footer.Buttons:GetChildren()) do
-					                                        print(v.Name)
-					                                    end
-					
-					                                    game:GetService("VirtualInputManager"):SendMouseButtonEvent(pos.X + button.AbsoluteSize.X / 2, pos.Y + button.AbsoluteSize.Y, 0, true, game, 1)
-					                                    wait()
-					                                    game:GetService("VirtualInputManager"):SendMouseButtonEvent(pos.X + button.AbsoluteSize.X / 2, pos.Y + button.AbsoluteSize.Y, 0, false, game, 1)
-					                                end
-					                            end
-					                        end
-					                    end
-					                end
-					            end
-					wait(0)
-					if loopActive == false then
-						break
+						if purchasePrompt then
+							local productPurchaseContainer = purchasePrompt:FindFirstChild("ProductPurchaseContainer")
+							if productPurchaseContainer then
+								local animator = productPurchaseContainer:FindFirstChild("Animator")
+								if animator then
+									local prompt = animator:FindFirstChild("Prompt")
+									if prompt and 
+										prompt:FindFirstChild("AlertContents") and
+										prompt.AlertContents:FindFirstChild("Footer") and
+										prompt.AlertContents.Footer:FindFirstChild("Buttons") then
+
+										for _, button in ipairs(prompt.AlertContents.Footer.Buttons:GetChildren()) do
+											if button:FindFirstChild("ButtonContent") and
+												button.ButtonContent:FindFirstChild("ButtonMiddleContent") and
+												button.ButtonContent.ButtonMiddleContent:FindFirstChildOfClass("TextLabel") and
+												button.ButtonContent.ButtonMiddleContent:FindFirstChildOfClass("TextLabel").Text == "Cancel" then
+
+												local pos = button.AbsolutePosition
+												print(pos)
+
+												for _, v in ipairs(prompt.AlertContents.Footer.Buttons:GetChildren()) do
+													print(v.Name)
+												end
+
+												game:GetService("VirtualInputManager"):SendMouseButtonEvent(pos.X + button.AbsoluteSize.X / 2, pos.Y + button.AbsoluteSize.Y, 0, true, game, 1)
+												wait()
+												game:GetService("VirtualInputManager"):SendMouseButtonEvent(pos.X + button.AbsoluteSize.X / 2, pos.Y + button.AbsoluteSize.Y, 0, false, game, 1)
+											end
+										end
+									end
+								end
+							end
+						end
+						wait(0)
+						if loopActive == false then
+							break
+						end
 					end
 				end
-			end
-	end)
-
-
-
-
-
-	ugc:Toggle("Auto Close Error", false, function(bool)
-		loopActive = bool
-		spawn(function()
-			while bool == true do
-				local pp = game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator:FindFirstChild("Prompt")
-				if pp and pp.AlertContents and pp.AlertContents.Footer and pp.AlertContents.Footer.Buttons and not pp.AlertContents.Footer.Buttons:FindFirstChild("1") then
-					if pp.AlertContents.Footer.Buttons:FindFirstChild("1") then
-						local b1 = pp.AlertContents.Footer.Buttons[1].AbsolutePosition
-						game:GetService("VirtualInputManager"):SendMouseButtonEvent(b1.X + 55, b1.Y + 65.5, 0, true, game, 1)
-						wait()
-						game:GetService("VirtualInputManager"):SendMouseButtonEvent(b1.X + 55, b1.Y + 65.5, 0, false, game, 1)
-					end
-				end
-				wait()
-			end
-		end)
-	end)
-
-	local players = serv:Channel("AntiAFKEgor")
-	players:Toggle("Anti Afk-Egor", false, function(bool)
-		if bool == true then
-			Players.LocalPlayer.Idled:connect(function()
-				VirtualUser:CaptureController()
-				VirtualUser:ClickButton2(Vector2.new())
 			end)
-		end
-	end)
-	local signal
-	players:Seperator()
-end)
+
+
+
+
+
+			ugc:Toggle("Auto Close Error", false, function(bool)
+				loopActive = bool
+				spawn(function()
+					while bool == true do
+						local pp = game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator:FindFirstChild("Prompt")
+						if pp and pp.AlertContents and pp.AlertContents.Footer and pp.AlertContents.Footer.Buttons and not pp.AlertContents.Footer.Buttons:FindFirstChild("1") then
+							if pp.AlertContents.Footer.Buttons:FindFirstChild("1") then
+								local b1 = pp.AlertContents.Footer.Buttons[1].AbsolutePosition
+								game:GetService("VirtualInputManager"):SendMouseButtonEvent(b1.X + 55, b1.Y + 65.5, 0, true, game, 1)
+								wait()
+								game:GetService("VirtualInputManager"):SendMouseButtonEvent(b1.X + 55, b1.Y + 65.5, 0, false, game, 1)
+							end
+						end
+						wait()
+					end
+				end)
+			end)
+
+			local players = serv:Channel("AntiAFKEgor")
+			players:Toggle("Anti Afk-Egor", false, function(bool)
+				if bool == true then
+					Players.LocalPlayer.Idled:connect(function()
+						VirtualUser:CaptureController()
+						VirtualUser:ClickButton2(Vector2.new())
+					end)
+				end
+			end)
+			local signal
+			players:Seperator()
 		else
-		LoginBox.Text = "Такого пользователя нету."
-		end
-	end)
+	LoginBox.Text = "Такого пользователя нету."
+	end
+end)
 
 -- BY WANDERWEREVER
