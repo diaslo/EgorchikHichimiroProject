@@ -117,7 +117,7 @@ textbox.Parent = LoginPage
 textbox.BackgroundTransparency = 0.5
 textbox.BackgroundColor3 = Color3.new(0.17,.17,.17)
 textbox.Visible = true
-textbox.Size = UDim2.new(0, 200, 0, 200)
+textbox.Size = UDim2.new(0, 200, 0, 50)
 
 
 		
