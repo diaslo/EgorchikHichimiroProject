@@ -1692,6 +1692,7 @@ function DiscordLib:Window(text)
 		Server.Name = text .. "Server"
 		Server.Parent = ServersHold
 		Server.BackgroundColor3 = Color3.fromRGB(47, 49, 54)
+		Server.BackgroundTransparency = 1
 		Server.Position = UDim2.new(0.125, 0, 0, 0)
 		Server.Size = UDim2.new(0, 47, 0, 47)
 		Server.AutoButtonColor = false
