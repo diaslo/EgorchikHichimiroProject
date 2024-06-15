@@ -109,7 +109,7 @@ local LoginPage = Instance.new("ScreenGui")
 LoginPage.Name = "LoginPage"
 LoginPage.Parent = game.CoreGui
 LoginPage.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
+LoginPage.Enabled = true
 
 local textbox = Instance.new("TextBox")
 textbox.Name = "PassBox"
