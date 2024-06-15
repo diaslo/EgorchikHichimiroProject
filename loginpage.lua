@@ -8,12 +8,11 @@ function login.login(pass)
 	local success, response = pcall(function()
 		return game:HttpGet(url)
 	end)
-
-	print(response)
 	
 	if success then
-		print(HttpService:JSONDecode(response))
-		return HttpService:JSONDecode(response)
+		local responseData = HttpService:JSONDecode(response)
+		print(responseData)
+		return responseData
 	else
 		warn("Failed to fetch data:", response)
 		return nil
