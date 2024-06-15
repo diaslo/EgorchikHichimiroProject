@@ -8,6 +8,8 @@ function login.login(pass)
 	local success, response = pcall(function()
 		return game:HttpGet(url)
 	end)
+
+	print(success, response)
 	
 	if success then
 		local successDecode, responseData = pcall(function()
