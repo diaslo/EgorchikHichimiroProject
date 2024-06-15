@@ -2188,7 +2188,6 @@ function DiscordLib:Window(text)
 						{TextSize = 14}
 					):Play()
 				end)
-
 				Button.MouseLeave:Connect(function()
 					TweenService:Create(
 						Button,
