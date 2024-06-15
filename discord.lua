@@ -2047,6 +2047,7 @@ function DiscordLib:Window(text)
 			ChannelBtn.Name = text .. "ChannelBtn"
 			ChannelBtn.Parent = ServerChannelHolder
 			ChannelBtn.BackgroundColor3 = Color3.fromRGB(47, 49, 54)
+			ChannelBtn.BackgroundTransparency = 1
 			ChannelBtn.BorderSizePixel = 0
 			ChannelBtn.Position = UDim2.new(0.24118948, 0, 0.578947365, 0)
 			ChannelBtn.Size = UDim2.new(0, 160, 0, 30)
@@ -2068,7 +2069,7 @@ function DiscordLib:Window(text)
 			ChannelBtnHashtag.Position = UDim2.new(0.0279720314, 0, 0, 0)
 			ChannelBtnHashtag.Size = UDim2.new(0, 24, 0, 30)
 			ChannelBtnHashtag.Font = Enum.Font.Gotham
-			ChannelBtnHashtag.Text = "#"
+			ChannelBtnHashtag.Text = ""
 			ChannelBtnHashtag.TextColor3 = Color3.fromRGB(114, 118, 125)
 			ChannelBtnHashtag.TextSize = 21
 
@@ -2081,7 +2082,7 @@ function DiscordLib:Window(text)
 			ChannelBtnTitle.Size = UDim2.new(0, 95, 0, 39)
 			ChannelBtnTitle.Font = Enum.Font.Gotham
 			ChannelBtnTitle.Text = text
-			ChannelBtnTitle.TextColor3 = Color3.fromRGB(114, 118, 125)
+			ChannelBtnTitle.TextColor3 = Color3.fromRGB(255,255,255)
 			ChannelBtnTitle.TextSize = 14
 			ChannelBtnTitle.TextXAlignment = Enum.TextXAlignment.Left
 			ServerChannelHolder.CanvasSize = UDim2.new(0, 0, 0, ServerChannelHolderLayout.AbsoluteContentSize.Y)
@@ -2206,10 +2207,16 @@ function DiscordLib:Window(text)
 				local ToggleFrameCircle = Instance.new("Frame")
 				local ToggleFrameCircleCorner = Instance.new("UICorner")
 				local Icon = Instance.new("ImageLabel")
-
+				local ToggleBtnCorner = Instance.new("UICorner")
 				Toggle.Name = "Toggle"
 				Toggle.Parent = ChannelHolder
-				Toggle.BackgroundColor3 = Color3.fromRGB(54, 57, 63)
+				Toggle.BackgroundColor3 = Color3.fromRGB(127, 15, 255)
+				Toggle.BackgroundTransparency = .3
+				
+				ToggleBtnCorner.CornerRadius = UDim.new(0, 6)
+				ToggleBtnCorner.Name = "ToggleBtnCorner"
+				ToggleBtnCorner.Parent = Toggle
+				
 				Toggle.BorderSizePixel = 0
 				Toggle.Position = UDim2.new(0.261979163, 0, 0.190789461, 0)
 				Toggle.Size = UDim2.new(0, 401, 0, 30)
