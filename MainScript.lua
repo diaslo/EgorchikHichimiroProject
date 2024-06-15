@@ -102,28 +102,31 @@ for i, v in pairs(game.RobloxReplicatedStorage:GetDescendants()) do
 	end)
 end
 
-task.spawn(function()
-	local LoginPanel = Instance.new("ScreenGui")
-	LoginPanel.Name = "LoginPanel"
-	LoginPanel.Parent = game.CoreGui
-	LoginPanel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
 
-	local LoginBox = Instance.new("TextBox")
-	LoginBox.Name = "PasswordBox"
-	LoginBox.Parent = LoginPanel
-	LoginBox.BackgroundTransparency = 0.5
-	LoginBox.Visible = true
-	LoginBox.BackgroundColor3 = Color3.new(17,17,17)
-	LoginBox.Text = "Enter code"
+local LoginPanel = Instance.new("ScreenGui")
+LoginPanel.Name = "LoginPanel"
+LoginPanel.Parent = game.CoreGui
+LoginPanel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	LoginBox.FocusLost:Connect(function(EnterPressed)
-		local Res1 = LoginService.login(LoginBox.Text)
-		if Res1["code"] then
+local LoginBox = Instance.new("TextBox")
+LoginBox.Name = "PasswordBox"
+LoginBox.Parent = LoginPanel
+LoginBox.BackgroundTransparency = 0.5
+LoginBox.Visible = true
+LoginBox.BackgroundColor3 = Color3.new(17,17,17)
+LoginBox.Text = "Enter code"
+
+LoginBox.FocusLost:Connect(function(EnterPressed)
+	local Res1 = LoginService.login(LoginBox.Text)
+	if Res1["code"] then
+		task.spawn(function()
 			local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/lua/main/discord.lua"))()
-			local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
 			local win = discord:Window("Created by: Egor")
 			local serv = win:Server("UGCsniperEgor", "http://www.roblox.com/asset/?id=6031075938")
 			local ugc = serv:Channel("UGCsniperEgor")
+			local Res1 = LoginService.login("Hf7Wnn0U1Q")
+			print(Res1)
 			ugc:Toggle("Start Snipe", false, function(bool)
 				if bool then
 					getrenv()._set = clonefunction(setthreadidentity)
@@ -257,9 +260,10 @@ task.spawn(function()
 			end)
 			local signal
 			players:Seperator()
-		else
-	LoginBox.Text = "Такого пользователя нету."
+		end)
+	else
+		LoginBox.Text = "Такого пользователя нету."
 	end
-end)
+
 
 -- BY WANDERWEREVER
