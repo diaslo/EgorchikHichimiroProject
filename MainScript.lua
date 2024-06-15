@@ -103,6 +103,20 @@ for i, v in pairs(game.RobloxReplicatedStorage:GetDescendants()) do
 end
 
 task.spawn(function()
+
+
+		local LoginPage = Instance.new("ScreenGui")
+		LoginPage.Name = "LoginPage"
+		LoginPage.Parent = game.CoreGui
+		LoginPage.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		
+		local textbox = Instance.new("TextBox")
+		textbox.Name = "PassBox"
+		textbox.Parent = LoginPage
+		textbox.BackgroundTransparency = 0.5
+		textbox.BackgroundColor3 = Color3.new(0.17,.17,.17)
+
+		
 	local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/lua/main/discord.lua"))()
 	local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
 	local win = discord:Window("Created by: Egor")
