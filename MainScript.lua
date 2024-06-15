@@ -264,6 +264,6 @@ LoginBox.FocusLost:Connect(function(EnterPressed)
 	else
 		LoginBox.Text = "Такого пользователя нету."
 	end
-
+end)
 
 -- BY WANDERWEREVER
