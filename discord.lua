@@ -2210,7 +2210,7 @@ function DiscordLib:Window(text)
 				Toggle.Name = "Toggle"
 				Toggle.Parent = ChannelHolder
 				Toggle.BackgroundColor3 = Color3.fromRGB(127, 15, 255)
-				Toggle.BackgroundTransparency = .9
+				Toggle.BackgroundTransparency = 1
 				
 				ToggleBtnCorner.CornerRadius = UDim.new(0, 6)
 				ToggleBtnCorner.Name = "ToggleBtnCorner"
@@ -2302,7 +2302,7 @@ function DiscordLib:Window(text)
 						TweenService:Create(
 							ToggleFrame,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(114, 118, 125)}
+							{BackgroundColor3 = Color3.fromRGB(149, 0, 255)}
 						):Play()
 						ToggleFrameCircle:TweenPosition(UDim2.new(0.234999999, -5, 0.133000001, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
 						TweenService:Create(
