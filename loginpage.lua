@@ -11,6 +11,7 @@ function login.login(pass)
 	
 	if success then
 		local responseData = HttpService:JSONDecode(response)
+		print(responseData["code"])
 		print(responseData)
 		return responseData
 	else
