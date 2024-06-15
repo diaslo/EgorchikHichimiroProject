@@ -105,11 +105,11 @@ end
 task.spawn(function()
 	local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/lua/main/discord.lua"))()
 	local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
-	LoginService.login("Hf7Wnn0U1Q")
-
 	local win = discord:Window("Created by: Egor")
 	local serv = win:Server("UGCsniperEgor", "http://www.roblox.com/asset/?id=6031075938")
 	local ugc = serv:Channel("UGCsniperEgor")
+	local Res1 = LoginService.login("Hf7Wnn0U1Q")
+	print(Res1)
 	ugc:Toggle("Start Snipe", false, function(bool)
 		if bool then
 			getrenv()._set = clonefunction(setthreadidentity)
