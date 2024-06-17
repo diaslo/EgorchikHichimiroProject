@@ -1,7 +1,7 @@
-Hichimiro Project
-Version: 2.1
-Creator: Hichimiro @hichimiro
-Seller: Egorchik @Egiroofff
+# Hichimiro Project
+- Version: 2.1
+- Creator: Hichimiro @hichimiro
+- Seller: Egorchik @Egiroofff
 
 - # MAIN:
 - Snipe UGC
